@@ -3,6 +3,10 @@ package com.lftechnology.paykii.dto.response;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.paykii.deserializer.BigDecimalDeserializer;
+import com.lftechnology.paykii.serializer.BigDecimalSerializer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,6 +21,8 @@ public class AmountDueResponse extends Response{
     private String entityTransactionId;
 
     @JsonProperty(value = "BillAmountDue")
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
     private BigDecimal billAmountDue;
 
     @JsonProperty(value = "BillDueDate")
@@ -27,6 +33,8 @@ public class AmountDueResponse extends Response{
     private Integer billsDue;
 
     @JsonProperty(value = "TotalAmountDue")
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
     private BigDecimal totalAmountDue;
 
     @JsonProperty(value = "CustomerName")

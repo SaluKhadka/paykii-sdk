@@ -4,7 +4,6 @@ import com.lftechnology.paykii.api.AmountDueApi;
 import com.lftechnology.paykii.constant.ApiConstants;
 import com.lftechnology.paykii.dto.request.AmountDueRequest;
 import com.lftechnology.paykii.dto.response.AmountDueResponse;
-import com.lftechnology.paykii.utils.ApiUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -55,7 +54,7 @@ public class AmountDueTest {
     }
 
     public Map<String, String> getHeaders(){
-        Map<String, String> headers = new HashMap<String, String>();
+        Map<String, String> headers = new HashMap<>();
         headers.put(ApiConstants.CONTENT_TYPE, ApiConstants.CONTENT_VALUE);
         headers.put(ApiConstants.X_API_KEY, ApiConstants.X_API_VALUE);
         return headers;
