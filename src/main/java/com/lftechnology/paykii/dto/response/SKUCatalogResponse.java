@@ -2,6 +2,10 @@ package com.lftechnology.paykii.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.paykii.deserializer.BigDecimalDeserializer;
+import com.lftechnology.paykii.serializer.BigDecimalSerializer;
 
 import java.math.BigDecimal;
 
@@ -39,12 +43,18 @@ public class SKUCatalogResponse extends Response{
     Boolean isPastDuePaymentAllowed;
 
     @JsonProperty(value = "Amount")
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
     BigDecimal amount;
 
     @JsonProperty(value = "MinAmount")
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
     BigDecimal minAmount;
 
     @JsonProperty(value = "MaxAmount")
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
     BigDecimal maxAmount;
 
     @JsonProperty(value = "DaysToPost")

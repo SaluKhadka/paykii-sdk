@@ -4,10 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.paykii.deserializer.BigDecimalDeserializer;
 import com.lftechnology.paykii.deserializer.LocalDateDeserializer;
 import com.lftechnology.paykii.dto.response.Response;
+import com.lftechnology.paykii.serializer.BigDecimalSerializer;
 import com.lftechnology.paykii.serializer.LocalDateSerializer;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -25,7 +28,9 @@ public class ExchangeRateDto extends Response{
     private LocalDate fxDate;
 
     @JsonProperty("FXRate")
-    private String fxRate;
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    @JsonDeserialize(using = BigDecimalDeserializer.class)
+    private BigDecimal fxRate;
 
     public String getBaseCurrency() {
         return baseCurrency;
@@ -51,11 +56,11 @@ public class ExchangeRateDto extends Response{
         this.fxDate = fxDate;
     }
 
-    public String getFxRate() {
+    public BigDecimal getFxRate() {
         return fxRate;
     }
 
-    public void setFxRate(String fxRate) {
+    public void setFxRate(BigDecimal fxRate) {
         this.fxRate = fxRate;
     }
 

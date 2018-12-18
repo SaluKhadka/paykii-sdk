@@ -40,7 +40,7 @@ public class BillerTest {
     }
 
     public Map<String, String> getHeaders(){
-        Map<String, String> headers = new HashMap<String, String>();
+        Map<String, String> headers = new HashMap<>();
         headers.put(ApiConstants.CONTENT_TYPE, ApiConstants.CONTENT_VALUE);
         headers.put(ApiConstants.X_API_KEY, ApiConstants.X_API_VALUE);
         return headers;

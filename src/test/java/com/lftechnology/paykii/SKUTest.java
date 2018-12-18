@@ -8,9 +8,12 @@ import com.lftechnology.paykii.dto.response.SKUCatalogResponse;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SKUTest {
 
@@ -55,9 +58,22 @@ public class SKUTest {
     }
 
     public Map<String, String> getHeaders(){
-        Map<String, String> headers = new HashMap<String, String>();
+        Map<String, String> headers = new HashMap<>();
         headers.put(ApiConstants.CONTENT_TYPE, ApiConstants.CONTENT_VALUE);
         headers.put(ApiConstants.X_API_KEY, ApiConstants.X_API_VALUE);
         return headers;
+    }
+
+    @Test
+    public void testValidlengthDeserializer() throws IOException {
+        List<Integer> deserializedNumber = deserializeNumber();
+        System.out.println(deserializedNumber.toString());
+    }
+
+    private List<Integer> deserializeNumber() {
+        List<String> list = Arrays.asList("11|8|26".split("\\|"));
+        return list.stream()
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
     }
 }
