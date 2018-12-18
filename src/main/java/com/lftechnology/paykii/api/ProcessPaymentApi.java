@@ -13,6 +13,10 @@ import retrofit2.Retrofit;
 
 import java.util.Map;
 
+/**
+ * @author SaluKhadka <salukhadka@lftechnology.com>
+ */
+
 public class ProcessPaymentApi {
 
     private RequestApi requestApi;

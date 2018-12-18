@@ -13,7 +13,9 @@ import retrofit2.Retrofit;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * @author SaluKhadka <salukhadka@lftechnology.com>
+ */
 public class ExchangeRateApi {
 
     private RequestApi requestApi;

@@ -13,6 +13,13 @@ import retrofit2.Retrofit;
 
 import java.util.Map;
 
+/**
+ *  AmountDue API allows to query the biller and find out how much is owed by the customer.
+ *  It only works for SKU {@link SKUCatalogApi} that allow balance inquiries.
+ *  @author SaluKhadka <salukhadka@lftechnology.com>
+ */
+
+
 public class AmountDueApi {
 
     private RequestApi requestApi;

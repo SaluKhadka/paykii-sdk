@@ -10,9 +10,12 @@ import com.lftechnology.paykii.service.PaymentStatusApiService;
 import com.lftechnology.paykii.service.impl.ExecuteApiServiceImpl;
 import retrofit2.Call;
 import retrofit2.Retrofit;
-
 import java.util.Map;
 
+/**
+ * verify the status of a payment obtained on the original payment request {@link ProcessPaymentApi}
+ * @author SaluKhadka <salukhadka@lftechnology.com>
+ */
 public class PaymentStatusApi {
     private RequestApi requestApi;
 

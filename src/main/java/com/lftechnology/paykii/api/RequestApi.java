@@ -13,7 +13,9 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 import java.io.IOException;
 import java.util.Map;
 
-
+/**
+ * @author SaluKhadka <salukhadka@lftechnology.com>
+ */
 public class RequestApi {
     private String baseUrl;
     private Headers headers;

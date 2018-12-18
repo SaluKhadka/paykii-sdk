@@ -12,6 +12,12 @@ import retrofit2.Retrofit;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * returns the list of {@link BillerCatalogResponse}
+ * describes each one regarding their country of origin {@link BillerCatalogRequest}
+ * @author SaluKhadka <salukhadka@lftechnology.com>
+ */
+
 public class BillerCatalogApi {
 
     private RequestApi requestApi;
